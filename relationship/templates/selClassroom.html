@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询指定班级的学生信息</title>
+</head>
+<body>
+    {% for g in gs %}
+        姓名：{{ g.stu_name }}
+        性别: {{ g.stu_sex }}
+        语文成绩: {{ g.stu_chinese }}
+        <br>
+    {% endfor %}
+</body>
+</html>

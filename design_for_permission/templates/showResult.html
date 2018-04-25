@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示特定权限查询结果</title>
+</head>
+<body>
+    {% for per in pers %}
+        {% if per.p_name %}
+            有该权限
+        {% endif %}
+        {% empty %}
+            没有该权限
+    {% endfor %}
+</body>
+</html>

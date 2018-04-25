@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    {% for stu in stus %}
+        计数从0开始：{{ forloop.counter0 }}
+        计数从1开始：{{ forloop.counter }}
+        计数从最后开始，到1停：{{ forloop.revcounter }}
+        计数从最后开始，到0停：{{ forloop.revcounter0 }}
+        <br>
+        {% ifequal forloop.counter 3 %} <!-- forloop.counter:用于计数 ifequal:判断是否相等-->
+            <h1>姓名：{{ stu.stu_name }}</h1>
+        {% else %}
+            姓名：{{ stu.stu_name }}
+        {% endifequal %}
+        性别：
+        {% if stu.stu_sex %}
+            男
+        {% else %}
+            女
+        {% endif %}
+        生日：{{ stu.stu_birth }}
+        语文成绩：{{stu.stu_chinese | add:10}}  <!--  过滤器：给每个语文成绩+10分-->
+        数学成绩：{{ stu.stu_math }}
+        <br>
+    {% empty %} <!-- for中为空时的处理-->
+        没有学生信息
+    {% endfor %}
+</body>
+</html>
